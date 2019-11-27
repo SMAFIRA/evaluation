@@ -1,2 +1,2 @@
 # evaluation
-Functions to evaluate re-rankings (R). Author is Dr. Matthias Steinfath, BfR
+Functions to evaluate re-rankings. Author is Dr. Matthias Steinfath, BfR
