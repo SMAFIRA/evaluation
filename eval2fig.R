@@ -9,8 +9,8 @@ PANEL1<-c("A","C","E")
 PANEL2<-c("B","D","F")
 for(i in 1: length(reflist)){
   D<-subset(X,Reference_PMID==reflist[i])
-  Pindex<-which(D$Equivalence=="+" or "++") #Equivalence is column in data-file "X" that stores the annotation for equivalence, column[3] in EXAMPLE "X"
-  Rindex<-which(D$3R==TRUE) #3R is column in data-file "X" that stores the annotation for relevance, column[4] in EXAMPLE "X"
+  Pindex<-which(D$Equivalence=="+" | D$Equivalence=="++") #Equivalence is column in data-file "X" that stores the annotation for equivalence, column[3] in EXAMPLE "X"
+  Rindex<-which(D$Relevance==TRUE) #Relevance is column in data-file "X" that stores the annotation for 3R-relevance, column[4] in EXAMPLE "X"
   
   lD<-dim(D)[1]
   lP<-length(Pindex)
