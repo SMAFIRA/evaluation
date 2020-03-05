@@ -1,16 +1,16 @@
 ############## Data handling
-#X<-read.csv("Case_Studies_Auswertungen_Matthias_II.csv",sep=";")
-X<-read.csv("data/Evaluation_PubMed_Rankings_Equivalence_Relevance.csv",sep=";")
-reflist<-unique(X$Reference)
+#SMAFIRA_c_Case_studies.csv is an EXAMPLE file "X"
+X<-read.csv("SMAFIRA_c_Case_studies.csv",sep=";")
+reflist<-unique(X$Reference_PMID) #Reference_PMID is column in EXAMPLE "X" that specifies the PMID of reference document, column[0] in EXAMPLE "X"
 ######################
-tiff("results/FIg5.tiff",pointsize = 3,res=400)
+tiff("EXAMPLE X.tiff",pointsize = 3,res=400)
 par(mfrow=c(min(length(reflist),3),2),mex=0.15,mar=c(5,4,4,2)+0.1,mai=c(0.1,0.1,0.1,0.1))
 PANEL1<-c("A","C","E")
 PANEL2<-c("B","D","F")
 for(i in 1: length(reflist)){
-  D<-subset(X,Reference==reflist[i])
-  Pindex<-which(D$Equivalence=="+")
-  Rindex<-which(D$Relevance=="R")
+  D<-subset(X,Reference_PMID==reflist[i])
+  Pindex<-which(D$Equivalence=="+" or "++") #Equivalence is column in data-file "X" that stores the annotation for equivalence, column[3] in EXAMPLE "X"
+  Rindex<-which(D$3R==TRUE) #3R is column in data-file "X" that stores the annotation for relevance, column[4] in EXAMPLE "X"
   
   lD<-dim(D)[1]
   lP<-length(Pindex)
