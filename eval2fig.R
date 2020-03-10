@@ -1,6 +1,6 @@
 ############## Data handling
 #SMAFIRA_c_Case_studies.csv is an EXAMPLE file "X"
-X<-read.csv("SMAFIRA_c_Case_studies.csv",sep=";")
+X<-read.csv("SMAFIRA_c_Annotations.csv",sep=";")
 reflist<-unique(X$Reference_PMID) #Reference_PMID is column in EXAMPLE "X" that specifies the PMID of reference document, column[0] in EXAMPLE "X"
 ######################
 tiff("EXAMPLE X.tiff",pointsize = 3,res=400)
